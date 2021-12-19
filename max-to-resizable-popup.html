@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Menu Popup &ndash; Change New Maximized Window to Resizable 0.5</title>
+<style>
+body {
+	margin: 4px 16px; font-size: 14px;
+ 	--body-text-color: #00f; color: var(--body-text-color);
+	--body-back-color: #def; background-color: var(--body-back-color);
+}
+@media (prefers-color-scheme: light) {
+	body {
+		--body-text-color: #000; --body-back-color: #f8f8f8;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		--body-text-color: #f4f4f4; --body-back-color: #333;
+	}
+}
+h1 {font-size: 1.2em;}
+h2 {font-size: 1.1em;}
+h1, h2 {position: relative; margin-bottom: 0;}
+p {margin: 0.5em 0;}
+.changed { background-color: #ff0; color: #000; }
+#oops {
+	display: none;
+	color: highlightText;
+	background-color: highlight;
+	font-weight: bold;
+	padding: 4px 12px;
+	margin-top: 2em;
+}
+#oops button { margin-left: 1em; }
+</style>
+</head>
+<body>
+<!--<h1>Change New Maximized Window to Resizable</h1>-->
+<form id="winpossize">
+	<p>These options allow setting the position and size of new windows. (Note: applies to future windows only)</p>
+	<h2>Override automatic positioning</h2>
+	<p><label><input type="radio" name="setposition" value="false"> Automatic (let Firefox decide new window position)</label><br>
+	   <label><input type="radio" name="setposition" value="true"> Set my preferred coordinates based on this window (<span id="currleft"></span> over @ <span id="currtop"></span> down)</label></p>
+	<h2>Override automatic sizing</h2>
+	<p><label><input type="radio" name="setsize" value="false"> Automatic (let Firefox decide new window size)</label><br>
+	   <label><input type="radio" name="setsize" value="true"> Set my preferred width/height based on this window (<span id="currwidth"></span> wide × <span id="currheight"></span> high)</label></p>
+	<p><button type="button" id="btnSave" class="savebtn">Save Changes</button> <button type="button" id="btnCancel">Cancel</button></p>
+	<p id="oops"><span></span><button id="btnclose" type="button" title="Close">X</button></p>
+</form>
+<script src="max-to-resizable-popup.js"></script>
+</body>
+</html>

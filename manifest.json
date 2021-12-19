@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
 	"name": "Change New Maximized Window to Resizable",
-	"description": "Detects new maximized windows and switches them to resizable instead.",
-	"version": "0.1",
+	"description": "Detects new maximized windows and switches them to resizable instead. Optionally resize and reposition new windows.",
+	"version": "0.5",
 	"developer": {
 		"name": "Jefferson \"jscher2000\" Scher",
 		"url": "https://github.com/jscher2000/"
@@ -13,5 +13,14 @@
 		]
 	},
 	"permissions": [
-	]
+		"storage"
+	],
+	"browser_action": {
+		"browser_style": true,
+		"default_icon": {
+			"64": "icons/browser-action.png"
+		},
+		"default_title": "Change New Window to Resizable",
+		"default_popup": "max-to-resizable-popup.html"
+	}
 }
